@@ -48,6 +48,14 @@ struct ScratchApp: App {
                     NavigationLink("Safari Icon") {
                         SafariIcon_Harness()
                     }
+                    Group {
+                        NavigationLink("Transforming Layout Guides") {
+                            TransformingLayoutGuides_Harness()
+                        }
+                        NavigationLink("Transforming Animated Heart") {
+                            TransformingAnimatedHeartDemo()
+                        }
+                    }
                 }
                 Spacer()
             }

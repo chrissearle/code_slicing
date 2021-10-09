@@ -23,6 +23,8 @@
 		83BB9242270CC94C00C1E842 /* UpArrowToTickIconDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB9241270CC94C00C1E842 /* UpArrowToTickIconDemo.swift */; };
 		83D909B227119B2F00101D1D /* DisneyPlusAddIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909B127119B2F00101D1D /* DisneyPlusAddIcon.swift */; };
 		83D909BB2711A8C600101D1D /* SafariIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909BA2711A8C600101D1D /* SafariIcon.swift */; };
+		83D909BD2711C38400101D1D /* TransformingLayoutGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909BC2711C38400101D1D /* TransformingLayoutGuides.swift */; };
+		83D909BF2711FA5400101D1D /* TransformingAnimatedHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909BE2711FA5400101D1D /* TransformingAnimatedHeart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		83BB9241270CC94C00C1E842 /* UpArrowToTickIconDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpArrowToTickIconDemo.swift; sourceTree = "<group>"; };
 		83D909B127119B2F00101D1D /* DisneyPlusAddIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisneyPlusAddIcon.swift; sourceTree = "<group>"; };
 		83D909BA2711A8C600101D1D /* SafariIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariIcon.swift; sourceTree = "<group>"; };
+		83D909BC2711C38400101D1D /* TransformingLayoutGuides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingLayoutGuides.swift; sourceTree = "<group>"; };
+		83D909BE2711FA5400101D1D /* TransformingAnimatedHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingAnimatedHeart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,18 +79,23 @@
 		83263D4B2708BF920017BBFC /* Scratch */ = {
 			isa = PBXGroup;
 			children = (
+				83320610270B429A006B8B25 /* AnimatedApertureDemo.swift */,
+				83263D642709F81C0017BBFC /* AnimatedArrowDemo.swift */,
+				830023102709FDEC00ADE933 /* AnimatedHeartDemo.swift */,
 				83002314270A308D00ADE933 /* CaptainAmericaShield.swift */,
+				83D909B127119B2F00101D1D /* DisneyPlusAddIcon.swift */,
+				83263D5E2708EDB40017BBFC /* GridLayoutArrowDemo.swift */,
+				83263D622708F93A0017BBFC /* HeartDemo.swift */,
+				83263D4E2708BF920017BBFC /* MyFitnessPalAddAnimation.swift */,
+				83263D602708F36E0017BBFC /* PolarLayoutStarDemo.swift */,
+				83D909BA2711A8C600101D1D /* SafariIcon.swift */,
 				83263D4C2708BF920017BBFC /* ScratchApp.swift */,
+				83D909BE2711FA5400101D1D /* TransformingAnimatedHeart.swift */,
+				83D909BC2711C38400101D1D /* TransformingLayoutGuides.swift */,
+				83BB9241270CC94C00C1E842 /* UpArrowToTickIconDemo.swift */,
 				83002312270A191200ADE933 /* VisualisingCustomTimingCurvesDemo.swift */,
 				83263D502708BF930017BBFC /* Assets.xcassets */,
-				8332060F270B424D006B8B25 /* Aperture */,
-				8332060D270B41D7006B8B25 /* Layouts */,
-				8332060C270B41C6006B8B25 /* MyFitnessPal */,
 				83263D522708BF930017BBFC /* Preview Content */,
-				8332060E270B41ED006B8B25 /* Simple Animations */,
-				83BB9241270CC94C00C1E842 /* UpArrowToTickIconDemo.swift */,
-				83D909B127119B2F00101D1D /* DisneyPlusAddIcon.swift */,
-				83D909BA2711A8C600101D1D /* SafariIcon.swift */,
 			);
 			path = Scratch;
 			sourceTree = "<group>";
@@ -97,41 +106,6 @@
 				83263D532708BF930017BBFC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		8332060C270B41C6006B8B25 /* MyFitnessPal */ = {
-			isa = PBXGroup;
-			children = (
-				83263D4E2708BF920017BBFC /* MyFitnessPalAddAnimation.swift */,
-			);
-			path = MyFitnessPal;
-			sourceTree = "<group>";
-		};
-		8332060D270B41D7006B8B25 /* Layouts */ = {
-			isa = PBXGroup;
-			children = (
-				83263D5E2708EDB40017BBFC /* GridLayoutArrowDemo.swift */,
-				83263D602708F36E0017BBFC /* PolarLayoutStarDemo.swift */,
-				83263D622708F93A0017BBFC /* HeartDemo.swift */,
-			);
-			path = Layouts;
-			sourceTree = "<group>";
-		};
-		8332060E270B41ED006B8B25 /* Simple Animations */ = {
-			isa = PBXGroup;
-			children = (
-				83263D642709F81C0017BBFC /* AnimatedArrowDemo.swift */,
-				830023102709FDEC00ADE933 /* AnimatedHeartDemo.swift */,
-			);
-			path = "Simple Animations";
-			sourceTree = "<group>";
-		};
-		8332060F270B424D006B8B25 /* Aperture */ = {
-			isa = PBXGroup;
-			children = (
-				83320610270B429A006B8B25 /* AnimatedApertureDemo.swift */,
-			);
-			path = Aperture;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,7 +189,9 @@
 				83263D632708F93A0017BBFC /* HeartDemo.swift in Sources */,
 				83263D4F2708BF920017BBFC /* MyFitnessPalAddAnimation.swift in Sources */,
 				83320611270B429A006B8B25 /* AnimatedApertureDemo.swift in Sources */,
+				83D909BF2711FA5400101D1D /* TransformingAnimatedHeart.swift in Sources */,
 				83002315270A308D00ADE933 /* CaptainAmericaShield.swift in Sources */,
+				83D909BD2711C38400101D1D /* TransformingLayoutGuides.swift in Sources */,
 				83D909BB2711A8C600101D1D /* SafariIcon.swift in Sources */,
 				83263D4D2708BF920017BBFC /* ScratchApp.swift in Sources */,
 				83263D5F2708EDB40017BBFC /* GridLayoutArrowDemo.swift in Sources */,
