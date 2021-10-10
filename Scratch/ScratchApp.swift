@@ -55,6 +55,12 @@ struct ScratchApp: App {
                         NavigationLink("Transforming Animated Heart") {
                             TransformingAnimatedHeartDemo()
                         }
+                        NavigationLink("Animatable Modifier Demo") {
+                            AnimatableModifierDemo_Harness()
+                        }
+                    }
+                    NavigationLink("Breathe") {
+                        BreatheAnimation_Harness()
                     }
                 }
                 Spacer()
