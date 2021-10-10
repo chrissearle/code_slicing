@@ -16,7 +16,7 @@ private struct Heart : Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = heartLayoutConfig.layout(in: rect)
+        let g = heartLayoutConfig.layout(in: rect)
         
         let p1 = g[0, 3]
         let p2 = g[4, 2]

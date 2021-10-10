@@ -28,7 +28,7 @@ private struct AnimatedHeart : Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = heartLayoutConfig.layout(in: rect)
+        let g = heartLayoutConfig.layout(in: rect)
         
         let p1 = g[0, 6].to(g[2, 6], factor)
         let p2 = g[8, 4].to(g[8, 5], factor)

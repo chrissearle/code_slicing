@@ -26,7 +26,7 @@ struct AnimatedArrow: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = arrowLayoutConfig.layout(in: rect)
+        let g = arrowLayoutConfig.layout(in: rect)
         
         path.move(g[0, 1].to(g[1, 0], factor))
         path.line(g[2, 1].to(g[1, 1], factor))

@@ -32,7 +32,7 @@ struct Arrow: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = arrowLayoutConfig.layout(in: rect)
+        let g = arrowLayoutConfig.layout(in: rect)
         
         path.move(g[0, 1])
         path.line(g[1, 1])

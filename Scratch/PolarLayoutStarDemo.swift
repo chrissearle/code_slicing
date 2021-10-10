@@ -37,7 +37,7 @@ struct Star: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = starLayoutConfig.layout(in: rect)
+        let g = starLayoutConfig.layout(in: rect)
         
         path.move(g[2, 0])
         
@@ -55,7 +55,7 @@ struct Polygon: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = starLayoutConfig.layout(in: rect)
+        let g = starLayoutConfig.layout(in: rect)
         
         path.move(g[2, 0])
         
@@ -73,7 +73,7 @@ struct Triangle: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = LayoutGuide.polar(rect, rings: 1, segments: 3)
+        let g = LayoutGuide.polar(rect, rings: 1, segments: 3)
         
         path.move(g[1, 0])
         

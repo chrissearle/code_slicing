@@ -79,12 +79,12 @@ private struct AnimatedGridShape : Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = gridLayoutGuide.layout(in: rect)
+        let g = gridLayoutGuide.layout(in: rect)
             .scaled(1 / Double.pi)
             .rotated(360.degrees, factor: animatableData)
         
         for corner in 0..<4 {
-            var lg = g
+            let lg = g
                 .rotated(90.degrees * corner)
                 .xOffset(from: -rect.halfWidth, to: rect.halfWidth, factor: animatableData)
             

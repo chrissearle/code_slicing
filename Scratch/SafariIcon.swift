@@ -70,7 +70,7 @@ private struct PTriangle : Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = pointerLayoutConfig.layout(in: rect)
+        let g = pointerLayoutConfig.layout(in: rect)
         
         path.move(g[1, 1])
         path.line(g[2, 0])
@@ -87,7 +87,7 @@ private struct Graduations : Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = gradLayoutConfig.layout(in: rect)
+        let g = gradLayoutConfig.layout(in: rect)
         
         for segment in 0..<g.yCount {
             path.line(from: g[3, segment], to: g[segment.isOdd ? 2 : 1, segment])

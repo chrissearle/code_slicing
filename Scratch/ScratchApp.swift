@@ -6,10 +6,10 @@ struct ScratchApp: App {
         WindowGroup {
             NavigationView {
                 List {
-                    NavigationLink("MyFitnessPal") {
-                        MyFitnessPalAddAnimation()
-                    }
                     Group {
+                        NavigationLink("MyFitnessPal") {
+                            MyFitnessPalAddAnimation()
+                        }
                         NavigationLink("Grid Layout") {
                             GridLayoutArrowDemo()
                         }
@@ -19,36 +19,33 @@ struct ScratchApp: App {
                         NavigationLink("Heart") {
                             HeartDemo()
                         }
-                    }
-                    Group {
                         NavigationLink("Animated Arrow") {
                             AnimatedArrowDemo()
                         }
                         NavigationLink("Animated Heart") {
                             AnimatedHeartDemo()
                         }
-                    }
-                    NavigationLink("Visualising Custom Timing Curves") {
-                        VisualisingCustomTimingCurvesDemo()
-                    }
-                    NavigationLink("Captain America") {
-                        CaptainAmericaShield()
-                    }
-                    NavigationLink("Aperture") {
-                        AnimatedApertureDemo()
-                    }
-                    Group {
+                        NavigationLink("Visualising Custom Timing Curves") {
+                            VisualisingCustomTimingCurvesDemo()
+                        }
+                        NavigationLink("Captain America") {
+                            CaptainAmericaShield()
+                        }
+                        NavigationLink("Aperture") {
+                            AnimatedApertureDemo()
+                        }
                         NavigationLink("UpArrowToTick") {
                             UpArrowToTickIconDemo()
                         }
+                    }
+                    Group {
+                        
                         NavigationLink("Disney+ Add") {
                             DisneyPlusAddIcon_Harness()
                         }
-                    }
-                    NavigationLink("Safari Icon") {
-                        SafariIcon_Harness()
-                    }
-                    Group {
+                        NavigationLink("Safari Icon") {
+                            SafariIcon_Harness()
+                        }
                         NavigationLink("Transforming Layout Guides") {
                             TransformingLayoutGuides_Harness()
                         }
@@ -58,9 +55,12 @@ struct ScratchApp: App {
                         NavigationLink("Animatable Modifier Demo") {
                             AnimatableModifierDemo_Harness()
                         }
-                    }
-                    NavigationLink("Breathe") {
-                        BreatheAnimation_Harness()
+                        NavigationLink("Breathe") {
+                            BreatheAnimation_Harness()
+                        }
+                        NavigationLink("Chrome") {
+                            ChromeIcon_Harness()
+                        }
                     }
                 }
                 Spacer()

@@ -27,6 +27,7 @@
 		83D909BF2711FA5400101D1D /* TransformingAnimatedHeart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909BE2711FA5400101D1D /* TransformingAnimatedHeart.swift */; };
 		83D909C12712177000101D1D /* AnimatableModifierDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909C02712177000101D1D /* AnimatableModifierDemo.swift */; };
 		83D909C327133BC800101D1D /* BreatheAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909C227133BC800101D1D /* BreatheAnimation.swift */; };
+		83D909C52713551D00101D1D /* ChromeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909C42713551D00101D1D /* ChromeIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		83D909BE2711FA5400101D1D /* TransformingAnimatedHeart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingAnimatedHeart.swift; sourceTree = "<group>"; };
 		83D909C02712177000101D1D /* AnimatableModifierDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatableModifierDemo.swift; sourceTree = "<group>"; };
 		83D909C227133BC800101D1D /* BreatheAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreatheAnimation.swift; sourceTree = "<group>"; };
+		83D909C42713551D00101D1D /* ChromeIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				83263D602708F36E0017BBFC /* PolarLayoutStarDemo.swift */,
 				83D909BA2711A8C600101D1D /* SafariIcon.swift */,
 				83263D4C2708BF920017BBFC /* ScratchApp.swift */,
+				83D909C42713551D00101D1D /* ChromeIcon.swift */,
 				83D909BE2711FA5400101D1D /* TransformingAnimatedHeart.swift */,
 				83D909BC2711C38400101D1D /* TransformingLayoutGuides.swift */,
 				83BB9241270CC94C00C1E842 /* UpArrowToTickIconDemo.swift */,
@@ -190,6 +193,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83D909C52713551D00101D1D /* ChromeIcon.swift in Sources */,
 				83D909B227119B2F00101D1D /* DisneyPlusAddIcon.swift in Sources */,
 				83002313270A191200ADE933 /* VisualisingCustomTimingCurvesDemo.swift in Sources */,
 				83263D632708F93A0017BBFC /* HeartDemo.swift in Sources */,

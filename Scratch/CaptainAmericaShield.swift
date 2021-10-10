@@ -112,7 +112,7 @@ private struct ShieldStar : Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = starLayoutConfig.layout(in: rect)
+        let g = starLayoutConfig.layout(in: rect)
         
         path.move(g[1, 0])
         
@@ -130,7 +130,7 @@ private struct StarDetailing : Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         
-        var g = starDetailingLayoutConfig.layout(in: rect)
+        let g = starDetailingLayoutConfig.layout(in: rect)
 
         path.move(g[1, 0])
         

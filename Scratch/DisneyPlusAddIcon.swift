@@ -55,7 +55,7 @@ private struct AddIcon: Shape {
 
         path.line(from: gh[1, 2], to: gh[3, 2])
         
-        var gv = iconLayoutConfig.layout(in: rect)
+        let gv = iconLayoutConfig.layout(in: rect)
             .scaled(.height(1.3), factor: animatableData)
             .rotated(218.degrees, factor: animatableData)
             .xOffset(rect.widthScaled(0.06), factor: animatableData)

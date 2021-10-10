@@ -43,7 +43,7 @@ private struct UpArrowToTickIcon : Shape {
         var path = Path()
         
         
-        var g = iconLayoutConfig.layout(in: rect)
+        let g = iconLayoutConfig.layout(in: rect)
             .rotated(225.degrees, factor: animatableData)
             .xOffset(rect.widthScaled(0.07), factor: animatableData)
         
