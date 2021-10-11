@@ -61,6 +61,12 @@ struct ScratchApp: App {
                         NavigationLink("Chrome") {
                             ChromeIcon_Harness()
                         }
+                        NavigationLink("Connected Wheels") {
+                            ConnectedWheelsDemo()
+                        }
+                        NavigationLink("Animated Train Wheel") {
+                            AnimatedTrainWheelDemo()
+                        }
                     }
                 }
                 Spacer()
