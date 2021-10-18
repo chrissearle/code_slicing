@@ -67,6 +67,9 @@ struct ScratchApp: App {
                         NavigationLink("Animated Train Wheel") {
                             AnimatedTrainWheelDemo()
                         }
+                        NavigationLink("Settings") {
+                            SettingsIcon_Harness()
+                        }
                     }
                 }
                 Spacer()

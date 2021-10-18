@@ -10,6 +10,7 @@
 		830023112709FDEC00ADE933 /* AnimatedHeartDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830023102709FDEC00ADE933 /* AnimatedHeartDemo.swift */; };
 		83002313270A191200ADE933 /* VisualisingCustomTimingCurvesDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83002312270A191200ADE933 /* VisualisingCustomTimingCurvesDemo.swift */; };
 		83002315270A308D00ADE933 /* CaptainAmericaShield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83002314270A308D00ADE933 /* CaptainAmericaShield.swift */; };
+		830ECBF0271CB697006F48FC /* StickyToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830ECBEF271CB697006F48FC /* StickyToggle.swift */; };
 		83263D4D2708BF920017BBFC /* ScratchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83263D4C2708BF920017BBFC /* ScratchApp.swift */; };
 		83263D4F2708BF920017BBFC /* MyFitnessPalAddAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83263D4E2708BF920017BBFC /* MyFitnessPalAddAnimation.swift */; };
 		83263D512708BF930017BBFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83263D502708BF930017BBFC /* Assets.xcassets */; };
@@ -30,12 +31,14 @@
 		83D909C52713551D00101D1D /* ChromeIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909C42713551D00101D1D /* ChromeIcon.swift */; };
 		83D909C7271366B000101D1D /* AnimatedTrainWheelDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909C6271366B000101D1D /* AnimatedTrainWheelDemo.swift */; };
 		83D909C92713671300101D1D /* ConnectedWheelsDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909C82713671300101D1D /* ConnectedWheelsDemo.swift */; };
+		83FC58FE27149CD300824CA0 /* SettingsIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83FC58FD27149CD300824CA0 /* SettingsIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		830023102709FDEC00ADE933 /* AnimatedHeartDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedHeartDemo.swift; sourceTree = "<group>"; };
 		83002312270A191200ADE933 /* VisualisingCustomTimingCurvesDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualisingCustomTimingCurvesDemo.swift; sourceTree = "<group>"; };
 		83002314270A308D00ADE933 /* CaptainAmericaShield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptainAmericaShield.swift; sourceTree = "<group>"; };
+		830ECBEF271CB697006F48FC /* StickyToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyToggle.swift; sourceTree = "<group>"; };
 		83263D492708BF920017BBFC /* Scratch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scratch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83263D4C2708BF920017BBFC /* ScratchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchApp.swift; sourceTree = "<group>"; };
 		83263D4E2708BF920017BBFC /* MyFitnessPalAddAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFitnessPalAddAnimation.swift; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		83D909C42713551D00101D1D /* ChromeIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChromeIcon.swift; sourceTree = "<group>"; };
 		83D909C6271366B000101D1D /* AnimatedTrainWheelDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedTrainWheelDemo.swift; sourceTree = "<group>"; };
 		83D909C82713671300101D1D /* ConnectedWheelsDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectedWheelsDemo.swift; sourceTree = "<group>"; };
+		83FC58FD27149CD300824CA0 /* SettingsIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				83D909C6271366B000101D1D /* AnimatedTrainWheelDemo.swift */,
 				83D909C227133BC800101D1D /* BreatheAnimation.swift */,
 				83002314270A308D00ADE933 /* CaptainAmericaShield.swift */,
+				83D909C42713551D00101D1D /* ChromeIcon.swift */,
 				83D909C82713671300101D1D /* ConnectedWheelsDemo.swift */,
 				83D909B127119B2F00101D1D /* DisneyPlusAddIcon.swift */,
 				83263D5E2708EDB40017BBFC /* GridLayoutArrowDemo.swift */,
@@ -104,7 +109,8 @@
 				83263D602708F36E0017BBFC /* PolarLayoutStarDemo.swift */,
 				83D909BA2711A8C600101D1D /* SafariIcon.swift */,
 				83263D4C2708BF920017BBFC /* ScratchApp.swift */,
-				83D909C42713551D00101D1D /* ChromeIcon.swift */,
+				83FC58FD27149CD300824CA0 /* SettingsIcon.swift */,
+				830ECBEF271CB697006F48FC /* StickyToggle.swift */,
 				83D909BE2711FA5400101D1D /* TransformingAnimatedHeart.swift */,
 				83D909BC2711C38400101D1D /* TransformingLayoutGuides.swift */,
 				83BB9241270CC94C00C1E842 /* UpArrowToTickIconDemo.swift */,
@@ -211,7 +217,9 @@
 				83D909BB2711A8C600101D1D /* SafariIcon.swift in Sources */,
 				83D909C12712177000101D1D /* AnimatableModifierDemo.swift in Sources */,
 				83263D4D2708BF920017BBFC /* ScratchApp.swift in Sources */,
+				830ECBF0271CB697006F48FC /* StickyToggle.swift in Sources */,
 				83263D5F2708EDB40017BBFC /* GridLayoutArrowDemo.swift in Sources */,
+				83FC58FE27149CD300824CA0 /* SettingsIcon.swift in Sources */,
 				830023112709FDEC00ADE933 /* AnimatedHeartDemo.swift in Sources */,
 				83D909C7271366B000101D1D /* AnimatedTrainWheelDemo.swift in Sources */,
 				83263D612708F36E0017BBFC /* PolarLayoutStarDemo.swift in Sources */,
