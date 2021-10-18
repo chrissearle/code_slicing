@@ -4,21 +4,79 @@ import PureSwiftUI
 private let toggleLayoutConfig = LayoutGuideConfig.grid(columns: 10, rows: 10)
 
 struct StickyToggle: View {
-    let debug = false
+    let size: CGFloat
+    let stickyThreshold: CGFloat
+    
+    @State private var atTop = true
+    @State private var yTranslation = CGFloat.zero
+    @State private var halfScreenHeight = CGFloat.zero
+    @State private var offsetAtBottom = CGFloat.zero
+    
+    private var validTranslation: Bool {
+        (atTop && yTranslation > 0)
+        ||
+        (!atTop && yTranslation < 0)
+    }
+
+    private var offsetForTranslation: CGFloat {
+        guard validTranslation else  {
+            return 0
+        }
+        
+        return yTranslation
+    }
     
     var body: some View {
-        StretchableSquare(stretchFactor: 0, isTop: true, debug: debug)
-            .toggleStyle(color: .green, debug: debug)
-            .frame(360)
-            .shadowIfNot(debug, radius: 10)
-            .layoutGuide(toggleLayoutConfig)
-            .showLayoutGuides(debug)
+        let designing = false
+        let debug = true
+        GeometryReader { (geo: GeometryProxy) in
+            ZStack {
+                VStack {
+                    StretchableSquare(stretchFactor: 0, isTop: true, designing: designing)
+                        .toggleStyle(color: .green, designing: designing)
+                        .frame(size)
+                        .yOffset(offsetForTranslation)
+                        .yOffsetIfNot(atTop, offsetAtBottom)
+                        .shadowIfNot(designing, radius: 10)
+                        .layoutGuide(toggleLayoutConfig)
+                        .showLayoutGuides(designing)
+                        .gesture(DragGesture(minimumDistance: 0)
+                                    .onChanged(onChanged)
+                                    .onEnded(onEnded))
+                    Spacer()
+                }
+                .onAppear {
+                    halfScreenHeight = geo.heightScaled(0.5)
+                    offsetAtBottom = geo.height - size
+                }
+                
+                if debug && !designing {
+                    TitleText("atTop: \(atTop)")
+                }
+            }
+            .greedyFrame()
+        }
     }
+    
+    private func isTopHalf(_ gesture: DragGesture.Value) -> Bool {
+        gesture.location.y <= halfScreenHeight
+    }
+    
+    private func onChanged(_ gesture: DragGesture.Value) {
+        yTranslation = gesture.translation.y
+    }
+
+    private func onEnded(_ gesture: DragGesture.Value) {
+        yTranslation = .zero
+        
+        atTop = isTopHalf(gesture)
+    }
+
 }
 
 private extension Shape {
-    @ViewBuilder func toggleStyle(color: Color, debug: Bool) -> some View {
-        if (debug) {
+    @ViewBuilder func toggleStyle(color: Color, designing: Bool) -> some View {
+        if (designing) {
             stroke(Color.black, style: .init(lineWidth: 2, lineCap: .round, lineJoin: .round))
         } else {
             fill(color)
@@ -27,13 +85,14 @@ private extension Shape {
 }
 
 private struct StretchableSquare : Shape {
-    var debug: Bool
-    var isTop: Bool
+    private let designing: Bool
+    private let isTop: Bool
+    
     var animatableData: CGFloat
 
-    init(stretchFactor: CGFloat, isTop: Bool, debug: Bool) {
+    init(stretchFactor: CGFloat, isTop: Bool, designing: Bool) {
         animatableData = stretchFactor
-        self.debug = debug
+        self.designing = designing
         self.isTop = isTop
     }
     
@@ -41,7 +100,7 @@ private struct StretchableSquare : Shape {
         var path = Path()
 
         let g = toggleLayoutConfig.layout(in: rect)
-            .rotated(180.degrees, factor: isTop ? 0 : 1)
+            .yScaled(-1, factor: isTop || designing ? 0 : 1)
         
         let p1 = g.topLeading
         let p2 = g.topTrailing
@@ -53,11 +112,11 @@ private struct StretchableSquare : Shape {
         path.move(p1)
         path.line(p2)
         
-        path.quadCurve(p3, cp: cp2p3, showControlPoints: debug)
+        path.quadCurve(p3, cp: cp2p3, showControlPoints: designing)
         
         path.line(p4)
         
-        path.quadCurve(p1, cp: cp2p1, showControlPoints: debug)
+        path.quadCurve(p1, cp: cp2p1, showControlPoints: designing)
 
         
         return path
@@ -68,7 +127,10 @@ private struct StretchableSquare : Shape {
 struct StickyToggle_Harness : View {
     var body: some View {
         VStack {
-            StickyToggle()
+            GeometryReader { (geo: GeometryProxy) in
+                StickyToggle(size: geo.widthScaled(0.3), stickyThreshold: geo.heightScaled(0.3))
+            }
+            .ignoresSafeArea()
         }
     }
 }
