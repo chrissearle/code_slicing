@@ -7,11 +7,13 @@ struct StickyToggle: View {
     let size: CGFloat
     let stickyThreshold: CGFloat
     
+    @State private var stuck = true
     @State private var atTop = true
+    @State private var potentiallyAtTop = true
     @State private var yTranslation = CGFloat.zero
     @State private var halfScreenHeight = CGFloat.zero
     @State private var offsetAtBottom = CGFloat.zero
-    
+
     private var validTranslation: Bool {
         (atTop && yTranslation > 0)
         ||
@@ -23,18 +25,47 @@ struct StickyToggle: View {
             return 0
         }
         
-        return yTranslation
+        if (stuck) {
+            return yTranslation / 2
+        } else {
+            return yTranslation
+        }
     }
     
+    private var scaleForTranslation : CGFloat {
+        guard stuck && validTranslation else {
+            return 1
+        }
+
+        return 1 + absoluteTranslation / size
+    }
+
+    private var absoluteTranslation : CGFloat {
+        abs(yTranslation)
+    }
+    
+    private var stretchFactor : CGFloat {
+        guard stuck && validTranslation else {
+            return 0
+        }
+
+        let distanceToThreshold = stickyThreshold - absoluteTranslation
+        
+        let normalizedDistanceToThreshold = distanceToThreshold / stickyThreshold
+        
+        return 1 - normalizedDistanceToThreshold
+    }
+
     var body: some View {
         let designing = false
         let debug = true
         GeometryReader { (geo: GeometryProxy) in
             ZStack {
                 VStack {
-                    StretchableSquare(stretchFactor: 0, isTop: true, designing: designing)
-                        .toggleStyle(color: .green, designing: designing)
+                    StretchableSquare(stretchFactor: stretchFactor, isTop: atTop, designing: designing)
+                        .toggleStyle(color: potentiallyAtTop ? .green : .red, designing: designing)
                         .frame(size)
+                        .yScale(scaleForTranslation)
                         .yOffset(offsetForTranslation)
                         .yOffsetIfNot(atTop, offsetAtBottom)
                         .shadowIfNot(designing, radius: 10)
@@ -51,7 +82,12 @@ struct StickyToggle: View {
                 }
                 
                 if debug && !designing {
-                    TitleText("atTop: \(atTop)")
+                    VStack {
+                        TitleText("atTop: \(atTop)")
+                        TitleText("potentiallyAtTop: \(potentiallyAtTop)")
+                        TitleText("stuck: \(stuck)")
+                        TitleText("stretchFactor: \(stretchFactor)")
+                    }
                 }
             }
             .greedyFrame()
@@ -64,10 +100,15 @@ struct StickyToggle: View {
     
     private func onChanged(_ gesture: DragGesture.Value) {
         yTranslation = gesture.translation.y
+        if (stuck) {
+            stuck = absoluteTranslation < stickyThreshold
+        }
+        potentiallyAtTop = isTopHalf(gesture)
     }
 
     private func onEnded(_ gesture: DragGesture.Value) {
         yTranslation = .zero
+        stuck = true
         
         atTop = isTopHalf(gesture)
     }
