@@ -3,6 +3,10 @@ import PureSwiftUI
 
 private let toggleLayoutConfig = LayoutGuideConfig.grid(columns: 10, rows: 10)
 
+private let springAnimation = Animation.spring(response: 0.2, dampingFraction: 0.4, blendDuration: 1)
+
+private let colorAnimation = Animation.easeInOut(duration: 0.25)
+
 struct StickyToggle: View {
     let size: CGFloat
     let stickyThreshold: CGFloat
@@ -11,7 +15,7 @@ struct StickyToggle: View {
     @State private var atTop = true
     @State private var potentiallyAtTop = true
     @State private var yTranslation = CGFloat.zero
-    @State private var halfScreenHeight = CGFloat.zero
+    @State private var halfViewHeight = CGFloat.zero
     @State private var offsetAtBottom = CGFloat.zero
 
     private var validTranslation: Bool {
@@ -58,13 +62,14 @@ struct StickyToggle: View {
 
     var body: some View {
         let designing = false
-        let debug = true
+        let debug = false
         GeometryReader { (geo: GeometryProxy) in
             ZStack {
                 VStack {
-                    StretchableSquare(stretchFactor: stretchFactor, isTop: atTop, designing: designing)
+                    StretchableSquare(stretchFactor: stretchFactor, atTop: atTop, designing: designing)
                         .toggleStyle(color: potentiallyAtTop ? .green : .red, designing: designing)
-                        .frame(size)
+                        .frameIfNot(designing, size)
+                        .frameIf(designing, geo.widthScaled(0.9))
                         .yScale(scaleForTranslation)
                         .yOffset(offsetForTranslation)
                         .yOffsetIfNot(atTop, offsetAtBottom)
@@ -74,10 +79,12 @@ struct StickyToggle: View {
                         .gesture(DragGesture(minimumDistance: 0)
                                     .onChanged(onChanged)
                                     .onEnded(onEnded))
-                    Spacer()
+                    if (!designing) {
+                        Spacer()
+                    }
                 }
                 .onAppear {
-                    halfScreenHeight = geo.heightScaled(0.5)
+                    halfViewHeight = geo.heightScaled(0.5)
                     offsetAtBottom = geo.height - size
                 }
                 
@@ -88,29 +95,35 @@ struct StickyToggle: View {
                         TitleText("stuck: \(stuck)")
                         TitleText("stretchFactor: \(stretchFactor)")
                     }
+                    .animation(nil)
                 }
             }
             .greedyFrame()
         }
     }
     
-    private func isTopHalf(_ gesture: DragGesture.Value) -> Bool {
-        gesture.location.y <= halfScreenHeight
+    private func inTopHalf(_ gesture: DragGesture.Value) -> Bool {
+        gesture.location.y <= halfViewHeight
     }
     
     private func onChanged(_ gesture: DragGesture.Value) {
         yTranslation = gesture.translation.y
         if (stuck) {
-            stuck = absoluteTranslation < stickyThreshold
+            withAnimation(springAnimation) {
+                stuck = absoluteTranslation < stickyThreshold
+            }
         }
-        potentiallyAtTop = isTopHalf(gesture)
+        withAnimation(colorAnimation) {
+            potentiallyAtTop = inTopHalf(gesture)
+        }
     }
 
     private func onEnded(_ gesture: DragGesture.Value) {
-        yTranslation = .zero
-        stuck = true
-        
-        atTop = isTopHalf(gesture)
+        withAnimation(springAnimation) {
+            yTranslation = .zero
+            stuck = true
+            atTop = inTopHalf(gesture)
+        }
     }
 
 }
@@ -127,21 +140,21 @@ private extension Shape {
 
 private struct StretchableSquare : Shape {
     private let designing: Bool
-    private let isTop: Bool
+    private let atTop: Bool
     
     var animatableData: CGFloat
 
-    init(stretchFactor: CGFloat, isTop: Bool, designing: Bool) {
+    init(stretchFactor: CGFloat, atTop: Bool, designing: Bool) {
         animatableData = stretchFactor
         self.designing = designing
-        self.isTop = isTop
+        self.atTop = atTop
     }
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
 
         let g = toggleLayoutConfig.layout(in: rect)
-            .yScaled(-1, factor: isTop || designing ? 0 : 1)
+            .yScaled(-1, factor: atTop || designing ? 0 : 1)
         
         let p1 = g.topLeading
         let p2 = g.topTrailing
