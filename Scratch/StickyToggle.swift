@@ -182,8 +182,13 @@ struct StickyToggle_Harness : View {
     var body: some View {
         VStack {
             GeometryReader { (geo: GeometryProxy) in
-                StickyToggle(size: geo.widthScaled(0.3), stickyThreshold: geo.heightScaled(0.3))
+                StickyToggle(size: geo.widthScaled(1), stickyThreshold: geo.heightScaled(0.3))
             }
+            .blendMode(.multiply)
+            .frame(50, 300)
+            .background(Capsule().fillColor(.gray)
+                            .overlay(Capsule().fillColor(.white).blur(10)))
+            .clipCapsuleWithStroke(Color.black, lineWidth: 2)
             .ignoresSafeArea()
         }
     }

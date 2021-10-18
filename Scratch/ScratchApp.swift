@@ -71,6 +71,11 @@ struct ScratchApp: App {
                             SettingsIcon_Harness()
                         }
                     }
+                    Group {
+                        NavigationLink("Sticky Toggle") {
+                            StickyToggle_Harness()
+                        }
+                    }
                 }
                 Spacer()
             }
