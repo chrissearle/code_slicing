@@ -22,6 +22,7 @@
 		83263D652709F81C0017BBFC /* AnimatedArrowDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83263D642709F81C0017BBFC /* AnimatedArrowDemo.swift */; };
 		83320611270B429A006B8B25 /* AnimatedApertureDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83320610270B429A006B8B25 /* AnimatedApertureDemo.swift */; };
 		83BB9242270CC94C00C1E842 /* UpArrowToTickIconDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83BB9241270CC94C00C1E842 /* UpArrowToTickIconDemo.swift */; };
+		83D63DFF271F1AFD005C56D2 /* ShazamOpeningAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D63DFE271F1AFD005C56D2 /* ShazamOpeningAnimation.swift */; };
 		83D909B227119B2F00101D1D /* DisneyPlusAddIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909B127119B2F00101D1D /* DisneyPlusAddIcon.swift */; };
 		83D909BB2711A8C600101D1D /* SafariIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909BA2711A8C600101D1D /* SafariIcon.swift */; };
 		83D909BD2711C38400101D1D /* TransformingLayoutGuides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D909BC2711C38400101D1D /* TransformingLayoutGuides.swift */; };
@@ -50,6 +51,7 @@
 		83263D642709F81C0017BBFC /* AnimatedArrowDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedArrowDemo.swift; sourceTree = "<group>"; };
 		83320610270B429A006B8B25 /* AnimatedApertureDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedApertureDemo.swift; sourceTree = "<group>"; };
 		83BB9241270CC94C00C1E842 /* UpArrowToTickIconDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpArrowToTickIconDemo.swift; sourceTree = "<group>"; };
+		83D63DFE271F1AFD005C56D2 /* ShazamOpeningAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamOpeningAnimation.swift; sourceTree = "<group>"; };
 		83D909B127119B2F00101D1D /* DisneyPlusAddIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisneyPlusAddIcon.swift; sourceTree = "<group>"; };
 		83D909BA2711A8C600101D1D /* SafariIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariIcon.swift; sourceTree = "<group>"; };
 		83D909BC2711C38400101D1D /* TransformingLayoutGuides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformingLayoutGuides.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				83D909BA2711A8C600101D1D /* SafariIcon.swift */,
 				83263D4C2708BF920017BBFC /* ScratchApp.swift */,
 				83FC58FD27149CD300824CA0 /* SettingsIcon.swift */,
+				83D63DFE271F1AFD005C56D2 /* ShazamOpeningAnimation.swift */,
 				830ECBEF271CB697006F48FC /* StickyToggle.swift */,
 				83D909BE2711FA5400101D1D /* TransformingAnimatedHeart.swift */,
 				83D909BC2711C38400101D1D /* TransformingLayoutGuides.swift */,
@@ -217,6 +220,7 @@
 				83D909BB2711A8C600101D1D /* SafariIcon.swift in Sources */,
 				83D909C12712177000101D1D /* AnimatableModifierDemo.swift in Sources */,
 				83263D4D2708BF920017BBFC /* ScratchApp.swift in Sources */,
+				83D63DFF271F1AFD005C56D2 /* ShazamOpeningAnimation.swift in Sources */,
 				830ECBF0271CB697006F48FC /* StickyToggle.swift in Sources */,
 				83263D5F2708EDB40017BBFC /* GridLayoutArrowDemo.swift in Sources */,
 				83FC58FE27149CD300824CA0 /* SettingsIcon.swift in Sources */,

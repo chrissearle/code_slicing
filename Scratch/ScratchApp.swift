@@ -75,6 +75,9 @@ struct ScratchApp: App {
                         NavigationLink("Sticky Toggle") {
                             StickyToggle_Harness()
                         }
+                        NavigationLink("Shazam") {
+                            ShazamOpeningAnimation_Harness()
+                        }
                     }
                 }
                 Spacer()
