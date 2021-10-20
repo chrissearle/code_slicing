@@ -21,8 +21,8 @@ struct PhotosIcon: View {
             
             ZStack {
                 RoundedRectangle(geo.widthScaled(0.2))
-                    .fillColor(.white) 
-                
+                    .fillColor(.white)
+
                 ForEach(0..<colors.count) {index in
                     Capsule()
                         .fill(LinearGradient([colors[index], colors[(index + 1) % colors.count]], to: .bottom ))
@@ -31,20 +31,53 @@ struct PhotosIcon: View {
                         .rotate(45.degrees * index)
                         .blendMode(.multiply)
                 }
+                
+                // Insert handles making the slight adjustment top left
+                let insertRadius = petalWidth * 0.5
+                let insertOffset = petalOffset + (petalHeight * 0.5) - insertRadius
+                
+                Insert(offset: insertOffset, radius: insertRadius)
+                    .fillColor(.black, style: .init(eoFill: true))
+                    .mask(Insert(offset: insertOffset, radius: insertRadius - 0.2, isMask: true))
+                    .opacity(0.2)
             }
         }
     }
 }
+
+private struct Insert : Shape {
+    
+    let offset: CGFloat
+    let radius: CGFloat
+    
+    var isMask = false
+    
+    func path(in rect: CGRect) -> Path {
+        var path = Path()
+        
+        if (!isMask) {
+            path.rect(rect)
+        }
+        path.circle(rect.center.yOffset(offset), radius: radius)
+        path.circle(rect.center.xOffset(offset), radius: radius)
+
+        return path
+    }
+}
+
 
 struct PhotosIcon_Harness : View {
     var body: some View {
         VStack {
             PhotosIcon()
                 .frame(400)
-                .greedyFrame()
-                .background(Color(white: 0.1).ignoresSafeArea())
-            
+            PhotosIcon()
+                .frame(200)
+            PhotosIcon()
+                .frame(100)
         }
+        .greedyFrame()
+        .background(Color(white: 0.1).ignoresSafeArea())
     }
 }
 
