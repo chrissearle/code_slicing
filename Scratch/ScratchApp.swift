@@ -78,6 +78,12 @@ struct ScratchApp: App {
                         NavigationLink("Shazam") {
                             ShazamOpeningAnimation_Harness()
                         }
+                        NavigationLink("Photos") {
+                            PhotosIcon_Harness()
+                        }
+                        NavigationLink("Inner Shadow On Text") {
+                            InnerShadowsOnText_Harness()
+                        }
                     }
                 }
                 Spacer()
